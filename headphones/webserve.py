@@ -1421,7 +1421,7 @@ class WebInterface(object):
             "join_onsnatch": checked(headphones.CONFIG.JOIN_ONSNATCH),
             "join_apikey": headphones.CONFIG.JOIN_APIKEY,
             "join_deviceid": headphones.CONFIG.JOIN_DEVICEID,
-            "writepaths_enabled": headphones.CONFIG.WRITEPATHS_ENABLED,
+            "writepaths_enabled": checked(headphones.CONFIG.WRITEPATHS_ENABLED),
             "writepaths_path": headphones.CONFIG.WRITEPATHS_PATH
         }
 
