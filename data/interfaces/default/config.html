@@ -1180,6 +1180,21 @@
                                 </div>
                             </fieldset>
 
+                            <fieldset>
+                                <div class="row checkbox left">
+                                    <input type="checkbox" class="bigcheck" name="writepaths_notify_enabled" id="writepaths_notify" value="1" ${config['writepaths_notify_enabled']} /><label for="writepaths_notify"><span class="option">Write Paths</span></label>
+                                </div>
+                                <div id="writepaths_notify_options">
+                                    <div class="row">
+                                        <input type="text" id="writepaths_notify_path" name="writepaths_notify_path" value="${config['writepaths_notify_path']}" size="50"><label>Path</label>
+                                    </div>
+                                    <div class="row">
+                                        <small>Enter the path</small>
+                                    </div>
+                                    
+                                </div>
+                            </fieldset>
+
                         </td>
                         <td>
 
