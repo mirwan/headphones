@@ -1065,4 +1065,3 @@ class WRITEPATHS(object):
             fp.close()
         except IOError as e:
             logger.info(u'Could not write file ' + str(filename) + u': ' + str(e))
-            
