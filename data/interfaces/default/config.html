@@ -2322,6 +2322,26 @@
                         }
                 });
 
+                if ($("#writepaths_notify").is(":checked"))
+                        {
+                            $("#writepaths_notify_options").show();
+                        }
+                else
+                        {
+                            $("#writepaths_notify_options").hide();
+                        }
+
+                $("#writepaths_notify").click(function(){
+                        if ($("#writepaths_notify").is(":checked"))
+                        {
+                            $("#writepaths_notify_options").slideDown();
+                        }
+                        else
+                        {
+                            $("#writepaths_notify_options").slideUp();
+                        }
+                });
+
                 if ($("#subsonic").is(":checked"))
                         {
                             $("#subsonicoptions").show();
