@@ -1739,7 +1739,7 @@ class WebInterface(object):
     def testWritePaths(self):
         logger.info(u"Sending WritePaths notification")
         writepaths = notifiers.WRITEPATHS()
-        result = writepaths.notify('snatched', 42, ['/tmp'] 
+        result = writepaths.notify('snatched', 42, ['/path/to/file'])
         return str(result)
 
     @cherrypy.expose
