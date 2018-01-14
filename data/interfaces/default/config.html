@@ -1182,11 +1182,11 @@
 
                             <fieldset>
                                 <div class="row checkbox left">
-                                    <input type="checkbox" class="bigcheck" name="writepaths_notify_enabled" id="writepaths_notify" value="1" ${config['writepaths_notify_enabled']} /><label for="writepaths_notify"><span class="option">Write Paths</span></label>
+                                    <input type="checkbox" class="bigcheck" name="writepaths_enabled" id="writepaths" value="1" ${config['writepaths_enabled']} /><label for="writepaths"><span class="option">Write Paths</span></label>
                                 </div>
-                                <div id="writepaths_notify_options">
+                                <div id="writepaths_options">
                                     <div class="row">
-                                        <input type="text" id="writepaths_notify_path" name="writepaths_notify_path" value="${config['writepaths_notify_path']}" size="50"><label>Path</label>
+                                        <input type="text" id="writepaths_path" name="writepaths_path" value="${config['writepaths_path']}" size="50"><label>Path</label>
                                     </div>
                                     <div class="row">
                                         <small>Enter the path</small>
@@ -2322,23 +2322,23 @@
                         }
                 });
 
-                if ($("#writepaths_notify").is(":checked"))
+                if ($("#writepaths").is(":checked"))
                         {
-                            $("#writepaths_notify_options").show();
+                            $("#writepaths_options").show();
                         }
                 else
                         {
-                            $("#writepaths_notify_options").hide();
+                            $("#writepaths_options").hide();
                         }
 
-                $("#writepaths_notify").click(function(){
-                        if ($("#writepaths_notify").is(":checked"))
+                $("#writepaths").click(function(){
+                        if ($("#writepaths").is(":checked"))
                         {
-                            $("#writepaths_notify_options").slideDown();
+                            $("#writepaths_options").slideDown();
                         }
                         else
                         {
-                            $("#writepaths_notify_options").slideUp();
+                            $("#writepaths_options").slideUp();
                         }
                 });
 
