@@ -621,6 +621,11 @@ def doPostProcessing(albumid, albumpath, release, tracks, downloaded_track_list,
         subject = release['ArtistName'] + ' - ' + release['AlbumTitle']
         email.notify(subject, "Download and Postprocessing completed")
 
+    if headphones.CONFIG.WRITEPATHS_ENABLED:
+        logger.info(u"Sending writepaths notification")
+        execnotif = notifiers.WRITEPATHS()
+        execnotif.notify(release['AlbumID'], albumpaths, statusmessage)
+
     if new_folder:
         shutil.rmtree(new_folder)
 

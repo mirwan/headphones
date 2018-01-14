@@ -24,6 +24,7 @@ from httplib import HTTPSConnection
 from urlparse import parse_qsl
 import urllib2
 
+import os
 import os.path
 from headphones import logger, helpers, common, request
 from pynma import pynma
@@ -1035,3 +1036,33 @@ class SLACK(object):
 
         logger.info(u"Slack notifications sent.")
         return sent_successfuly
+
+class WRITEPATHS(object):
+    def notify(self, albumid, albumpaths, status):
+        if not headphones.CONFIG.WRITEPATHS_ENABLED:
+            return
+
+        dirpath = headphones.CONFIG.WRITEPATHS_PATH
+
+        # dirpath
+        if not dirpath:
+            return
+
+        # Making dir
+        try:
+            if not os.path.isdir(dirpath):
+                os.mkdir(dirpath)
+        except Exception, e:
+            logger.info(u'Could not create directory ' + str(dirpath) + u': ' + str(e))
+
+        # filename
+        filename = u'notif.' + str(albumid) + u'.' + str(status)
+        absfilename = os.path.join(dirpath, filename)
+        # Writing file
+        try:
+            with open(absfilename, 'w') as fp:
+                fp.write(','.join(albumpaths) + '\n')
+            fp.close()
+        except IOError as e:
+            logger.info(u'Could not write file ' + str(filename) + u': ' + str(e))
+            
